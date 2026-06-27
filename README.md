@@ -56,21 +56,32 @@ For each uploaded image, the application returns:
 - Confidence level
 - AI-generated interpretation
 
-## Dataset
+## Download the Dataset
 
-Reference database: **EuroSAT RGB Dataset (Kaggle)**
+This project uses the EuroSAT RGB dataset available on Kaggle: https://www.kaggle.com/datasets/waseemalastal/eurosat-rgb-dataset
 
-Land-cover classes:
-- AnnualCrop
-- Forest
-- HerbaceousVegetation
-- Highway
-- Industrial
-- Pasture
-- PermanentCrop
-- Residential
-- River
-- SeaLake
+    Download the EuroSAT RGB dataset from Kaggle.
+    Extract the archive.
+    Create a folder named data in the project root.
+    Copy the dataset into the data/ folder.
+
+The project directory should look like:
+
+GeoVision-Retrieval-Agent/
+```text
+├── data/EuroSAT/
+│        ├── AnnualCrop/
+│        ├── Forest/
+│        ├── HerbaceousVegetation/
+│        ├── Highway/
+│        ├── Industrial/
+│        ├── Pasture/
+│        ├── PermanentCrop/
+│        ├── Residential/
+│        ├── River/
+│        └── SeaLake/
+```
+The script build_embeddings.py uses the images stored in the data/ directory to generate the embedding database (embeddings.npy, labels.npy, and paths.npy).
 
 ## AI Concepts Demonstrated
 
@@ -95,12 +106,27 @@ GeoVision-Retrieval-Agent/
 ├── app.py
 ├── agent.py
 ├── build_embeddings.py
-├── data/
-├── banner/
+├── embeddings.npy
+├── labels.npy
+├── paths.npy
+├── data/EuroSAT/
+│        ├── AnnualCrop/
+│        ├── Forest/
+│        ├── HerbaceousVegetation/
+│        ├── Highway/
+│        ├── Industrial/
+│        ├── Pasture/
+│        ├── PermanentCrop/
+│        ├── Residential/
+│        ├── River/
+│        └── SeaLake/
+├── GeoVision_banner.jpg
 ├── weights/
+│   └── resnet18-f37072fd.pth
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
 ```
 
 ## Installation
